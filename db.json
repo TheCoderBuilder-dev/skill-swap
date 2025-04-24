@@ -1,0 +1,22 @@
+{
+  "skills": [
+    {
+      "id": "1",
+      "title": "Guitar Lessons",
+      "description": "Can teach acoustic or electric guitar - know various styles including rock, blues, and folk",
+      "skill_type": "music",
+      "user_name": "Mike R",
+      "contact_info": "mike.r@email.com",
+      "posted_on": "2024-03-15"
+    },
+    {
+      "id": "2",
+      "title": "Python Programming Help",
+      "description": "Looking to trade Python programming knowledge for Spanish language practice",
+      "skill_type": "technology",
+      "user_name": "Sarah K",
+      "contact_info": "sarah.k@email.com",
+      "posted_on": "2024-03-14"
+    }
+  ]
+}
