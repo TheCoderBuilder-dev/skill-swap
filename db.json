@@ -2,21 +2,542 @@
   "skills": [
     {
       "id": "1",
-      "title": "Guitar Lessons",
-      "description": "Can teach acoustic or electric guitar - know various styles including rock, blues, and folk",
-      "skill_type": "music",
-      "user_name": "Mike R",
-      "contact_info": "mike.r@email.com",
-      "posted_on": "2024-03-15"
+      "title": "JavaScript Programming",
+      "description": "Learn JavaScript programming from basics to advanced concepts.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user1",
+      "about": "Comprehensive JavaScript course covering fundamentals to advanced topics"
     },
     {
       "id": "2",
-      "title": "Python Programming Help",
-      "description": "Looking to trade Python programming knowledge for Spanish language practice",
+      "title": "Guitar Lessons",
+      "description": "Beginner to intermediate acoustic guitar lessons.",
+      "type": "OFFERING",
+      "time": "1 hour per week",
+      "level": "Beginner",
+      "location": "In Person",
+      "teacherId": "user2",
+      "about": "Learn guitar through practical exercises and songs"
+    },
+    {
+      "id": "3",
+      "title": "Spanish Language",
+      "description": "Want to learn Spanish language. Looking for a tutor.",
+      "type": "SEEKING",
+      "time": "Flexible",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user3",
+      "about": "Seeking conversational Spanish lessons"
+    },
+    {
+      "id": "4",
+      "title": "Digital Photography Basics",
+      "description": "Professional photographer offering lessons in composition, lighting, and basic photo editing",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner",
+      "location": "Hybrid",
+      "teacherId": "user4",
+      "about": "Learn photography from a professional photographer"
+    },
+    {
+      "id": "5",
+      "title": "French Language Exchange",
+      "description": "Native French speaker looking to exchange language practice with English speakers",
+      "type": "OFFERING",
+      "time": "1 hour per week",
+      "level": "Intermediate",
+      "location": "Online",
+      "teacherId": "user5",
+      "about": "Native French speaker with teaching experience"
+    },
+    {
+      "id": "6",
+      "title": "Yoga Instruction",
+      "description": "Certified yoga instructor offering personalized sessions for beginners to intermediate",
+      "skill_type": "fitness",
+      "user_name": "Emma P",
+      "contact_info": "emma.p@email.com",
+      "posted_on": "2024-03-17"
+    },
+    {
+      "id": "7",
+      "title": "Web Development Mentoring",
+      "description": "Full-stack developer offering mentoring in React, Node.js, and modern web development",
       "skill_type": "technology",
-      "user_name": "Sarah K",
-      "contact_info": "sarah.k@email.com",
-      "posted_on": "2024-03-14"
+      "user_name": "David H",
+      "contact_info": "david.h@email.com",
+      "posted_on": "2024-03-17"
+    },
+    {
+      "id": "8",
+      "title": "Cooking Italian Cuisine",
+      "description": "Professional chef sharing authentic Italian cooking techniques and recipes",
+      "skill_type": "culinary",
+      "user_name": "Marco B",
+      "contact_info": "marco.b@email.com",
+      "posted_on": "2024-03-18"
+    },
+    {
+      "id": "9",
+      "title": "Drawing Fundamentals",
+      "description": "Artist teaching basic to advanced drawing techniques, focusing on perspective and shading",
+      "skill_type": "arts",
+      "user_name": "Lisa W",
+      "contact_info": "lisa.w@email.com",
+      "posted_on": "2024-03-18"
+    },
+    {
+      "id": "10",
+      "title": "Financial Planning Basics",
+      "description": "Certified financial planner offering guidance on budgeting and investment basics",
+      "skill_type": "finance",
+      "user_name": "Robert J",
+      "contact_info": "robert.j@email.com",
+      "posted_on": "2024-03-19"
+    },
+    {
+      "id": "11",
+      "title": "Japanese Language and Culture",
+      "description": "Teaching Japanese language basics along with cultural insights and customs",
+      "skill_type": "language",
+      "user_name": "Yuki T",
+      "contact_info": "yuki.t@email.com",
+      "posted_on": "2024-03-19"
+    },
+    {
+      "id": "12",
+      "title": "Home Garden Design",
+      "description": "Experienced gardener offering advice on garden design and plant care",
+      "skill_type": "gardening",
+      "user_name": "Helen G",
+      "contact_info": "helen.g@email.com",
+      "posted_on": "2024-03-20"
+    },
+    {
+      "id": "13",
+      "title": "Mobile App Development",
+      "description": "iOS developer teaching Swift and mobile app development fundamentals",
+      "skill_type": "technology",
+      "user_name": "Chris M",
+      "contact_info": "chris.m@email.com",
+      "posted_on": "2024-03-20"
+    },
+    {
+      "id": "14",
+      "title": "Piano Lessons",
+      "description": "Classical pianist offering lessons for beginners to intermediate players",
+      "skill_type": "music",
+      "user_name": "Anna K",
+      "contact_info": "anna.k@email.com",
+      "posted_on": "2024-03-21"
+    },
+    {
+      "id": "15",
+      "title": "Personal Fitness Training",
+      "description": "Certified personal trainer specializing in strength training and weight loss",
+      "skill_type": "fitness",
+      "user_name": "Tom B",
+      "contact_info": "tom.b@email.com",
+      "posted_on": "2024-03-21"
+    },
+    {
+      "id": "16",
+      "title": "Creative Writing Workshop",
+      "description": "Published author offering guidance in fiction writing and storytelling",
+      "skill_type": "writing",
+      "user_name": "Rachel S",
+      "contact_info": "rachel.s@email.com",
+      "posted_on": "2024-03-22"
+    },
+    {
+      "id": "17",
+      "title": "Data Science Fundamentals",
+      "description": "Data scientist teaching Python, pandas, and basic machine learning concepts",
+      "skill_type": "technology",
+      "user_name": "Michael L",
+      "contact_info": "michael.l@email.com",
+      "posted_on": "2024-03-22"
+    },
+    {
+      "id": "18",
+      "title": "Meditation and Mindfulness",
+      "description": "Experienced meditation teacher offering guidance in mindfulness practices",
+      "skill_type": "wellness",
+      "user_name": "Sara M",
+      "contact_info": "sara.m@email.com",
+      "posted_on": "2024-03-23"
+    },
+    {
+      "id": "19",
+      "title": "Spanish Conversation Practice",
+      "description": "Native Spanish speaker offering conversation practice and cultural exchange",
+      "skill_type": "language",
+      "user_name": "Carlos R",
+      "contact_info": "carlos.r@email.com",
+      "posted_on": "2024-03-23"
+    },
+    {
+      "id": "20",
+      "title": "Digital Marketing Strategy",
+      "description": "Marketing professional teaching social media and content marketing",
+      "skill_type": "business",
+      "user_name": "Jessica P",
+      "contact_info": "jessica.p@email.com",
+      "posted_on": "2024-03-24"
+    },
+    {
+      "id": "21",
+      "title": "Woodworking Basics",
+      "description": "Experienced woodworker teaching basic furniture making and wood crafting",
+      "skill_type": "crafts",
+      "user_name": "John D",
+      "contact_info": "john.d@email.com",
+      "posted_on": "2024-03-24"
+    },
+    {
+      "id": "22",
+      "title": "UI/UX Design Principles",
+      "description": "Product designer teaching user interface and experience design fundamentals",
+      "skill_type": "design",
+      "user_name": "Nina R",
+      "contact_info": "nina.r@email.com",
+      "posted_on": "2024-03-25"
+    },
+    {
+      "id": "23",
+      "title": "Vegan Cooking Classes",
+      "description": "Plant-based chef teaching healthy and delicious vegan cooking techniques",
+      "skill_type": "culinary",
+      "user_name": "Maya H",
+      "contact_info": "maya.h@email.com",
+      "posted_on": "2024-03-25"
+    },
+    {
+      "id": "24",
+      "title": "Home DIY Projects",
+      "description": "Experienced handyman teaching basic home repair and improvement skills",
+      "skill_type": "home",
+      "user_name": "Steve K",
+      "contact_info": "steve.k@email.com",
+      "posted_on": "2024-03-26"
+    },
+    {
+      "id": "25",
+      "title": "Voice Training",
+      "description": "Professional vocalist offering singing lessons and voice training",
+      "skill_type": "music",
+      "user_name": "Maria C",
+      "contact_info": "maria.c@email.com",
+      "posted_on": "2024-03-26"
+    },
+    {
+      "id": "26",
+      "title": "3D Modeling and Animation",
+      "description": "3D artist teaching Blender and basic animation principles",
+      "skill_type": "technology",
+      "user_name": "Peter Z",
+      "contact_info": "peter.z@email.com",
+      "posted_on": "2024-03-27"
+    },
+    {
+      "id": "27",
+      "title": "Chess Strategy",
+      "description": "Chess master teaching advanced strategies and game analysis",
+      "skill_type": "games",
+      "user_name": "Daniel F",
+      "contact_info": "daniel.f@email.com",
+      "posted_on": "2024-03-27"
+    },
+    {
+      "id": "28",
+      "title": "Public Speaking",
+      "description": "Communication coach offering public speaking and presentation skills training",
+      "skill_type": "professional",
+      "user_name": "Laura B",
+      "contact_info": "laura.b@email.com",
+      "posted_on": "2024-03-28"
+    },
+    {
+      "id": "29",
+      "title": "Watercolor Painting",
+      "description": "Artist teaching watercolor techniques and color theory",
+      "skill_type": "arts",
+      "user_name": "Emily W",
+      "contact_info": "emily.w@email.com",
+      "posted_on": "2024-03-28"
+    },
+    {
+      "id": "30",
+      "title": "German Language Basics",
+      "description": "Native German speaker offering language lessons for beginners",
+      "skill_type": "language",
+      "user_name": "Klaus M",
+      "contact_info": "klaus.m@email.com",
+      "posted_on": "2024-03-29"
+    },
+    {
+      "id": "31",
+      "title": "Blockchain Development",
+      "description": "Blockchain developer teaching smart contract development and Web3",
+      "skill_type": "technology",
+      "user_name": "Alex K",
+      "contact_info": "alex.k@email.com",
+      "posted_on": "2024-03-29"
+    },
+    {
+      "id": "32",
+      "title": "Interior Design Basics",
+      "description": "Interior designer teaching space planning and design principles",
+      "skill_type": "design",
+      "user_name": "Sophie H",
+      "contact_info": "sophie.h@email.com",
+      "posted_on": "2024-03-30"
+    },
+    {
+      "id": "33",
+      "title": "Dance - Hip Hop",
+      "description": "Professional dancer teaching hip hop choreography and techniques",
+      "skill_type": "dance",
+      "user_name": "Marcus J",
+      "contact_info": "marcus.j@email.com",
+      "posted_on": "2024-03-30"
+    },
+    {
+      "id": "34",
+      "title": "Resume Writing",
+      "description": "Career coach offering resume writing and job search strategy advice",
+      "skill_type": "professional",
+      "user_name": "Linda P",
+      "contact_info": "linda.p@email.com",
+      "posted_on": "2024-03-31"
+    },
+    {
+      "id": "35",
+      "title": "Pottery Making",
+      "description": "Ceramic artist teaching wheel throwing and hand building techniques",
+      "skill_type": "crafts",
+      "user_name": "Mark T",
+      "contact_info": "mark.t@email.com",
+      "posted_on": "2024-03-31"
+    },
+    {
+      "id": "36",
+      "title": "Video Editing",
+      "description": "Professional editor teaching video editing with Adobe Premiere Pro",
+      "skill_type": "technology",
+      "user_name": "Ryan M",
+      "contact_info": "ryan.m@email.com",
+      "posted_on": "2024-04-01"
+    },
+    {
+      "id": "37",
+      "title": "Aromatherapy Basics",
+      "description": "Certified aromatherapist teaching essential oil blending and uses",
+      "skill_type": "wellness",
+      "user_name": "Alice N",
+      "contact_info": "alice.n@email.com",
+      "posted_on": "2024-04-01"
+    },
+    {
+      "id": "38",
+      "title": "Graphic Design",
+      "description": "Designer teaching Adobe Creative Suite and design principles",
+      "skill_type": "design",
+      "user_name": "James L",
+      "contact_info": "james.l@email.com",
+      "posted_on": "2024-04-02"
+    },
+    {
+      "id": "39",
+      "title": "Martial Arts - Karate",
+      "description": "Black belt instructor teaching karate basics and self-defense",
+      "skill_type": "fitness",
+      "user_name": "Ken W",
+      "contact_info": "ken.w@email.com",
+      "posted_on": "2024-04-02"
+    },
+    {
+      "id": "40",
+      "title": "Organic Farming",
+      "description": "Experienced farmer teaching organic growing methods and sustainability",
+      "skill_type": "gardening",
+      "user_name": "Beth Y",
+      "contact_info": "beth.y@email.com",
+      "posted_on": "2024-04-03"
+    },
+    {
+      "id": "41",
+      "title": "Cryptocurrency Trading",
+      "description": "Crypto trader teaching basic trading strategies and market analysis",
+      "skill_type": "finance",
+      "user_name": "Sam B",
+      "contact_info": "sam.b@email.com",
+      "posted_on": "2024-04-03"
+    },
+    {
+      "id": "42",
+      "title": "Podcast Production",
+      "description": "Audio producer teaching podcast recording and editing techniques",
+      "skill_type": "technology",
+      "user_name": "Kate D",
+      "contact_info": "kate.d@email.com",
+      "posted_on": "2024-04-04"
+    },
+    {
+      "id": "43",
+      "title": "Wine Tasting",
+      "description": "Sommelier offering wine appreciation and tasting techniques",
+      "skill_type": "culinary",
+      "user_name": "Paul V",
+      "contact_info": "paul.v@email.com",
+      "posted_on": "2024-04-04"
+    },
+    {
+      "id": "44",
+      "title": "Makeup Artistry",
+      "description": "Professional makeup artist teaching beauty and special effects techniques",
+      "skill_type": "beauty",
+      "user_name": "Mia R",
+      "contact_info": "mia.r@email.com",
+      "posted_on": "2024-04-05"
+    },
+    {
+      "id": "45",
+      "title": "Drum Lessons",
+      "description": "Professional drummer teaching various styles and techniques",
+      "skill_type": "music",
+      "user_name": "Rick S",
+      "contact_info": "rick.s@email.com",
+      "posted_on": "2024-04-05"
+    },
+    {
+      "id": "46",
+      "title": "Pet Training",
+      "description": "Certified dog trainer teaching basic obedience and behavior modification",
+      "skill_type": "pets",
+      "user_name": "Amy H",
+      "contact_info": "amy.h@email.com",
+      "posted_on": "2024-04-06"
+    },
+    {
+      "id": "47",
+      "title": "Knitting and Crochet",
+      "description": "Experienced crafter teaching various knitting and crochet techniques",
+      "skill_type": "crafts",
+      "user_name": "Grace L",
+      "contact_info": "grace.l@email.com",
+      "posted_on": "2024-04-06"
+    },
+    {
+      "id": "48",
+      "title": "Game Development",
+      "description": "Game developer teaching Unity and basic game design principles",
+      "skill_type": "technology",
+      "user_name": "Tim K",
+      "contact_info": "tim.k@email.com",
+      "posted_on": "2024-04-07"
+    },
+    {
+      "id": "49",
+      "title": "Salsa Dancing",
+      "description": "Dance instructor teaching salsa moves and Latin dance basics",
+      "skill_type": "dance",
+      "user_name": "Rosa M",
+      "contact_info": "rosa.m@email.com",
+      "posted_on": "2024-04-07"
+    },
+    {
+      "id": "50",
+      "title": "Business Plan Writing",
+      "description": "Business consultant teaching how to create effective business plans",
+      "skill_type": "business",
+      "user_name": "Frank C",
+      "contact_info": "frank.c@email.com",
+      "posted_on": "2024-04-08"
+    },
+    {
+      "id": "8b80",
+      "title": "guitar",
+      "description": "looop",
+      "skillType": "cooking",
+      "skillLevel": "intermediate"
+    },
+    {
+      "id": "b2f9",
+      "title": "mlml",
+      "description": "mnoo",
+      "skillType": "music",
+      "skillLevel": "beginner"
+    },
+    {
+      "id": "2283",
+      "title": "lll",
+      "description": "kmnkn",
+      "skillType": "music",
+      "skillLevel": "beginner"
+    }
+  ],
+  "users": [
+    {
+      "id": "user1",
+      "name": "John Smith",
+      "email": "john@example.com",
+      "about": "Experienced JavaScript developer and teacher",
+      "skills": [
+        "1"
+      ]
+    },
+    {
+      "id": "user2",
+      "name": "Sarah Johnson",
+      "email": "sarah@example.com",
+      "about": "Professional guitarist with 10 years of teaching experience",
+      "skills": [
+        "2"
+      ]
+    },
+    {
+      "id": "user3",
+      "name": "Mike Wilson",
+      "email": "mike@example.com",
+      "about": "Language enthusiast looking to learn Spanish",
+      "skills": [
+        "3"
+      ]
+    },
+    {
+      "id": "user4",
+      "name": "Alex M",
+      "email": "alex.m@email.com",
+      "about": "Professional photographer with 5 years of teaching experience",
+      "skills": [
+        "4"
+      ]
+    },
+    {
+      "id": "user5",
+      "name": "Sophie L",
+      "email": "sophie.l@email.com",
+      "about": "Native French speaker teaching language and culture",
+      "skills": [
+        "5"
+      ]
+    }
+  ],
+  "swaps": [
+    {
+      "id": "swap1",
+      "offeredSkillId": "1",
+      "requestedSkillId": "2",
+      "offererId": "user1",
+      "requesterId": "user2",
+      "status": "pending",
+      "createdAt": "2024-03-20T10:00:00Z"
     }
   ]
 }

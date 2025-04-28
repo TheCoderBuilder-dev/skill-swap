@@ -4,116 +4,146 @@ import { toast } from 'react-toastify';
 import '../styles/SkillDetails.css';
 
 function SkillDetails() {
-  const [skill, setSkill] = useState(null);
-  const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [skill, setSkill] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showSwapModal, setShowSwapModal] = useState(false);
+  const [userSkills, setUserSkills] = useState([]);
+  const [selectedSkillId, setSelectedSkillId] = useState('');
+
   useEffect(() => {
-    fetch(`http://localhost:3000/skills/${id}`)
-      .then(res => res.json())
-      .then(data => {
-        setSkill(data);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error('Error fetching skill:', err);
-        toast.error('Failed to load skill details');
-        setLoading(false);
-      });
+    // fake API call
+    setTimeout(() => {
+      const fetchedSkill = {
+        id: id,
+        title: "JavaScript Programming",
+        description: "Learn JavaScript basics and advanced topics.",
+        type: "OFFERING",
+        time: "2 hours per week",
+        level: "Beginner",
+        location: "Online",
+        teacher: "John Smith",
+        about: "I love helping people learn code."
+      };
+
+      setSkill(fetchedSkill);
+      setLoading(false);
+    }, 1000);
   }, [id]);
+
+  useEffect(() => {
+    if (showSwapModal) {
+      // fake user skills
+      const skills = [
+        { id: '1', title: 'JavaScript Basics', description: 'Learn JS from scratch' },
+        { id: '2', title: 'Guitar Lessons', description: 'Learn to play guitar' },
+        { id: '3', title: 'Spanish Language', description: 'Learn basic Spanish' }
+      ];
+
+      setUserSkills(skills);
+    }
+  }, [showSwapModal]);
+
+  function handleProposeSwap() {
+    if (selectedSkillId === '') {
+      toast.error('Please pick a skill first.');
+      return;
+    }
+
+    // pretend to send swap proposal
+    setTimeout(() => {
+      toast.success('Swap proposal sent!');
+      setShowSwapModal(false);
+      navigate(`/skills/swap/${id}`);
+    }, 500);
+  }
 
   if (loading) {
     return (
       <div className="skill-details-container">
-        <div className="loading">Loading skill details...</div>
+        <p>Loading skill details...</p>
       </div>
     );
   }
 
-  if (!skill) {
+  if (error || !skill) {
     return (
       <div className="skill-details-container">
-        <div className="error-message">Skill not found</div>
+        <p>{error || 'Skill not found.'}</p>
+        <button onClick={() => navigate(-1)}>Go Back</button>
       </div>
     );
   }
 
   return (
-    <div className="skill-details-container">
-      <div className="skill-details-card">
-        <button className="back-button" onClick={() => navigate(-1)}>
-          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back
-        </button>
+    <div className="container">
+      <button onClick={() => navigate(-1)}>← Back</button>
 
-        <div className="skill-details-header">
-          <h1>{skill.title}</h1>
-          <span className={`skill-type ${skill.skill_type.toLowerCase()}`}>
-            {skill.skill_type}
-          </span>
-        </div>
+      <div className="skill-box">
+        <h1>{skill.title}</h1>
+        <span className="type">{skill.type}</span>
 
-        <div className="skill-details-content">
-          <div className="skill-description-section">
-            <h2>Description</h2>
-            <p>{skill.description}</p>
-          </div>
+        <div className="details">
+          <h2>About This Skill</h2>
+          <p>{skill.description}</p>
 
-          <div className="skill-requirements-section">
-            <h2>Requirements</h2>
-            <ul>
-              <li>Time Commitment: {skill.time_commitment || 'Flexible'}</li>
-              <li>Experience Level: {skill.experience_level || 'Any'}</li>
-              <li>Location: {skill.location || 'Remote'}</li>
-            </ul>
-          </div>
+          <h2>Requirements</h2>
+          <ul>
+            <li>Time: {skill.time}</li>
+            <li>Level: {skill.level}</li>
+            <li>Location: {skill.location}</li>
+          </ul>
 
-          <div className="user-profile-section">
-            <h2>About the {skill.skill_type === 'OFFERING' ? 'Teacher' : 'Student'}</h2>
-            <div className="user-profile-card">
-              <div className="user-avatar-large">
-                {skill.user_name.charAt(0).toUpperCase()}
-              </div>
-              <div className="user-info-detailed">
-                <h3>{skill.user_name}</h3>
-                <p>{skill.user_bio || 'No bio provided'}</p>
-                <div className="user-stats">
-                  <div className="stat">
-                    <span className="stat-value">4.8</span>
-                    <span className="stat-label">Rating</span>
-                  </div>
-                  <div className="stat">
-                    <span className="stat-value">12</span>
-                    <span className="stat-label">Swaps</span>
-                  </div>
-                </div>
-              </div>
+          <h2>Teacher</h2>
+          <div className="teacher-box">
+            <div className="avatar">{skill.teacher.charAt(0)}</div>
+            <div>
+              <h3>{skill.teacher}</h3>
+              <p>{skill.about}</p>
             </div>
           </div>
         </div>
 
-        <div className="action-buttons">
-          <button className="message-button">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-            </svg>
-            Message
-          </button>
-          <button className="connect-button">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 11v8a1 1 0 01-1 1H4a1 1 0 01-1-1v-8a1 1 0 011-1h2a1 1 0 011 1zm8-6v14a1 1 0 01-1 1h-2a1 1 0 01-1-1V5a1 1 0 011-1h2a1 1 0 011 1zm8 2v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V7a1 1 0 011-1h2a1 1 0 011 1z" />
-            </svg>
-            Propose Swap
-          </button>
+        <div className="buttons">
+          <button onClick={() => alert('Messaging coming soon!')}>Message</button>
+          <button onClick={() => setShowSwapModal(true)}>Swap Skills</button>
         </div>
       </div>
+
+      {showSwapModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Propose a Skill Swap</h2>
+            <p>Choose one of your skills to swap for {skill.title}:</p>
+
+            <div className="skill-select">
+              {userSkills.map((userSkill) => (
+                <div
+                  key={userSkill.id}
+                  className={`skill-option ${selectedSkillId === userSkill.id ? 'selected' : ''}`}
+                  onClick={() => setSelectedSkillId(userSkill.id)}
+                >
+                  <h3>{userSkill.title}</h3>
+                  <p>{userSkill.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="modal-actions">
+              <button onClick={() => setShowSwapModal(false)}>Cancel</button>
+              <button onClick={handleProposeSwap}>Propose Swap</button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="similar-skills-section">
         <h2>Similar Skills</h2>
         <div className="similar-skills-grid">
+          {/* could show similar skills here later */}
         </div>
       </div>
     </div>

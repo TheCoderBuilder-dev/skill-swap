@@ -1,0 +1,162 @@
+/* General Page Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Profile Header */
+.profile-header {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px lightgray;
+  margin-bottom: 20px;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 36px;
+  margin: 0 auto 20px auto;
+}
+
+.profile-name {
+  text-align: center;
+  color: darkblue;
+  margin-bottom: 10px;
+}
+
+.profile-email {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.profile-skills {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px lightgray;
+}
+
+.skills-title {
+  color: darkblue;
+  margin-bottom: 15px;
+}
+
+.skills-grid {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.skill-item {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.edit-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* Beginner mistake: not handling small screens */
+@media (max-width: 500px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Skill Card Section */
+.skill-card {
+  max-width: 700px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.skill-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+/* Individual Skill Block */
+.skill-card > div {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+}
+
+.skill-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.skill-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Buttons */
+button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+button:nth-child(1) {
+  background-color: #4caf50;
+  color: white;
+}
+
+button:nth-child(2) {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Loading text */
+div:has(> h2) + div:has(> div:only-child) {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #999;
+}

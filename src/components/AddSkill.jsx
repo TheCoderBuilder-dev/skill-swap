@@ -1,139 +1,149 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function AddSkill() {
-  const navigate = useNavigate()
+  const nav = useNavigate();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: '',
     description: '',
-    skill_type: '',
-    user_name: '',
-    contact_info: ''
-  })
+    skillType: '',
+    skillLevel: 'beginner',
+  });
 
+  const [errors, setErrors] = useState({});
+
+  // handle input changes
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
+    const { name, value } = e.target;
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    // Basic validation
-    if (!formData.title || !formData.description || !formData.skill_type) {
-      toast.error('Please fill in all required fields')
-      return
+  // validate form data
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.title.trim()) {
+      newErrors.title = 'Title is required';
+    }
+    if (!formData.description.trim()) {
+      newErrors.description = 'Description is required';
+    }
+    if (!formData.skillType) {
+      newErrors.skillType = 'Skill type is required';
     }
 
-    const skillData = {
-      ...formData,
-      posted_on: new Date().toISOString().split('T')[0]
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  //form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      toast.error('Please fill in all required fields');
+      return;
     }
 
-    fetch('http://localhost:3000/skills', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(skillData)
-    })
-    .then(res => res.json())
-    .then(data => {
-      toast.success('Skill added successfully!')
-      navigate('/skills')
-    })
-    .catch(err => {
-      console.error('Error adding skill:', err)
-      toast.error('Failed to add skill')
-    })
-  }
+    setLoading(true);
+
+    try {
+      const response = await fetch('http://localhost:3000/skills', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create skill');
+      }
+
+      const data = await response.json();
+      toast.success('Skill added successfully!');
+      nav(`/skills/${data.id}`);
+    } catch (error) {
+      console.error('Error creating skill:', error);
+      toast.error('Failed to create skill. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <div>
-      <div className="profile-header">
-        <h2>Add New Skill</h2>
-      </div>
+    <div className="add-skill-container">
+      <h2>Add New Skill</h2>
 
-      <div className="skill-card">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label className="form-label">Title *</label>
-            <input
-              type="text"
-              name="title"
-              className="form-input"
-              value={formData.title}
-              onChange={handleChange}
-              placeholder="e.g., Guitar Lessons"
-            />
-          </div>
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Title *</label>
+          <input
+            type="text"
+            name="title"
+            value={formData.title}
+            onChange={handleChange}
+            placeholder="What skill are you offering?"
+            className={errors.title ? 'error' : ''}
+          />
+          {errors.title && <div className="error-message">{errors.title}</div>}
+        </div>
 
-          <div className="form-group">
-            <label className="form-label">Description *</label>
-            <textarea
-              name="description"
-              className="form-input"
-              value={formData.description}
-              onChange={handleChange}
-              placeholder="Describe what you can teach or what you want to learn..."
-              rows="4"
-            />
-          </div>
+        <div className="form-group">
+          <label>Description *</label>
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            placeholder="Describe what you'll teach..."
+            className={errors.description ? 'error' : ''}
+          />
+          {errors.description && <div className="error-message">{errors.description}</div>}
+        </div>
 
-          <div className="form-group">
-            <label className="form-label">Skill Type *</label>
-            <select
-              name="skill_type"
-              className="form-input"
-              value={formData.skill_type}
-              onChange={handleChange}
-            >
-              <option value="">Select a type</option>
-              <option value="music">Music</option>
-              <option value="technology">Technology</option>
-              <option value="language">Language</option>
-              <option value="art">Art</option>
-              <option value="sports">Sports</option>
-              <option value="cooking">Cooking</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
+        <div className="form-group">
+          <label>Skill Type *</label>
+          <select
+            name="skillType"
+            value={formData.skillType}
+            onChange={handleChange}
+            className={errors.skillType ? 'error' : ''}
+          >
+            <option value="">Select a category</option>
+            <option value="music">Music</option>
+            <option value="technology">Technology</option>
+            <option value="language">Language</option>
+            <option value="art">Art</option>
+            <option value="sports">Sports</option>
+            <option value="cooking">Cooking</option>
+          </select>
+          {errors.skillType && <div className="error-message">{errors.skillType}</div>}
+        </div>
 
-          <div className="form-group">
-            <label className="form-label">Your Name *</label>
-            <input
-              type="text"
-              name="user_name"
-              className="form-input"
-              value={formData.user_name}
-              onChange={handleChange}
-            />
-          </div>
+        <div className="form-group">
+          <label>Skill Level</label>
+          <select
+            name="skillLevel"
+            value={formData.skillLevel}
+            onChange={handleChange}
+          >
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+          </select>
+        </div>
 
-          <div className="form-group">
-            <label className="form-label">Contact Info *</label>
-            <input
-              type="text"
-              name="contact_info"
-              className="form-input"
-              value={formData.contact_info}
-              onChange={handleChange}
-              placeholder="Email or phone number"
-            />
-          </div>
-
-          <button type="submit" className="btn btn-primary">
-            Add Skill
-          </button>
-        </form>
-      </div>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Creating...' : 'Create Skill'}
+        </button>
+      </form>
     </div>
-  )
+  );
 }
 
-
-export default AddSkill 
+export default AddSkill;

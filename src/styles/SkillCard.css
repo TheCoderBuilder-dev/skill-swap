@@ -1,0 +1,129 @@
+.skill-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+  transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-md);
+}
+
+.skill-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.skill-type {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: 4px var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+}
+
+.skill-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.skill-detail-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.skill-detail-item i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.skill-description {
+  color: var(--text);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.skill-teacher {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--light-gray);
+}
+
+.teacher-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+}
+
+.teacher-info {
+  flex: 1;
+}
+
+.teacher-name {
+  color: var(--text);
+  font-weight: 500;
+  margin: 0;
+}
+
+.teacher-location {
+  color: var(--text-light);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.skill-actions {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.skill-actions button {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.primary-action {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+}
+
+.primary-action:hover {
+  background-color: var(--primary-dark);
+}
+
+.secondary-action {
+  background-color: var(--light-gray);
+  color: var(--text);
+  border: none;
+}
+
+.secondary-action:hover {
+  background-color: var(--gray);
+} 

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-import '../styles/Home.css'
+import { Link } from 'react-router-dom';
+import '../styles/Home.css';
 
 function Home() {
   return (
@@ -46,13 +46,10 @@ function Home() {
       <section className="cta-section">
         <Link to="/skills" className="cta-button">
           Browse Skills
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
         </Link>
       </section>
     </div>
-  )
+  );
 }
 
-export default Home 
+export default Home;

@@ -10,6 +10,8 @@ import SkillDetails from './components/SkillDetails'
 import Messages from './components/Messages'
 import Dashboard from './components/Dashboard'
 import Notifications from './components/Notifications'
+import SkillSwap from './components/SkillSwap'
+import Reviews from './components/Reviews'
 import './App.css'
 
 function App() {
@@ -22,8 +24,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/skills" element={<SkillList />} />
             <Route path="/skills/:id" element={<SkillDetails />} />
+            <Route path="/skills/swap/:id" element={<SkillSwap />} />
             <Route path="/add-skill" element={<AddSkill />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/reviews/:id" element={<Reviews />} />
             <Route path="/messages" element={<Messages />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/notifications" element={<Notifications />} />

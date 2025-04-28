@@ -1,38 +1,59 @@
-import { useState, useEffect } from 'react'
-import { toast } from 'react-toastify'
-import '../styles/SkillList.css'
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import '../styles/SkillList.css';
 
 function SkillList() {
-  const [skills, setSkills] = useState([])
-  const [searchTerm, setSearchTerm] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [all_skills, setAllSkills] = useState([]);
+  const [search, setSearch] = useState('');
+  const [isLoading, setisLoading] = useState(true);
+  let navigate = useNavigate();
+
+  var skills = [
+    {
+      id: '1',
+      title: 'JavaScript Programming',
+      description: 'Learn JavaScript programming from basics to advanced concepts.',
+      type: 'OFFERING',
+      teacher: 'John Smith'
+    },
+    {
+      id: '2',
+      title: 'Guitar Lessons',
+      description: 'Beginner to intermediate acoustic guitar lessons.',
+      type: 'OFFERING',
+      teacher: 'Sarah Johnson'
+    },
+    {
+      id: '3',
+      title: 'Spanish Language',
+      description: 'Want to learn Spanish language. Looking for a tutor.',
+      type: 'SEEKING',
+      teacher: 'Mike Wilson'
+    },
+  ];
 
   useEffect(() => {
-    fetch('http://localhost:3000/skills')
-      .then(res => res.json())
-      .then(data => {
-        setSkills(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error('Error fetching skills:', err)
-        toast.error('Failed to load skills')
-        setLoading(false)
-      })
+    setAllSkills(skills);
+    setisLoading(false);
   }, [])
 
-  const filteredSkills = skills.filter(skill => 
-    skill.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    skill.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    skill.skill_type.toLowerCase().includes(searchTerm.toLowerCase())
-  )
+  function searchSkills(searchText) {
+    setSearch(searchText);
+  }
 
-  if (loading) {
-    return (
-      <div className="skills-container">
-        <div className="loading">Loading skills</div>
-      </div>
-    )
+  if(isLoading == true) {
+    return <div className="skills-container">
+      <div className="loading">Loading skills...</div>
+    </div>
+  }
+
+  let filtered = [];
+  for(let i = 0; i < all_skills.length; i++) {
+    if(all_skills[i].title.toLowerCase().includes(search.toLowerCase()) || 
+       all_skills[i].description.toLowerCase().includes(search.toLowerCase())) {
+      filtered.push(all_skills[i]);
+    }
   }
 
   return (
@@ -44,48 +65,49 @@ function SkillList() {
             type="text"
             className="search-input"
             placeholder="Search skills..."
-            value={searchTerm}
-            onChange={e => setSearchTerm(e.target.value)}
+            value={search}
+            onChange={(e) => searchSkills(e.target.value)}
           />
-          <svg className="search-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
         </div>
       </div>
 
-      {filteredSkills.length === 0 ? (
+      {filtered.length === 0 ? (
         <div className="no-results">
           No skills found matching your search.
         </div>
       ) : (
-        <div className="skills-grid">
-          {filteredSkills.map(skill => (
-            <div key={skill.id} className="skill-card">
+        <div className="skills-list">
+          {filtered.map(skill => (
+            <div 
+              key={skill.id} 
+              className="skill-card"
+              onClick={() => navigate(`/skills/${skill.id}`)}
+            >
               <div className="skill-header">
                 <h3 className="skill-title">{skill.title}</h3>
-                <span className={`skill-type ${skill.skill_type.toLowerCase()}`}>
-                  {skill.skill_type}
+                <span className={`skill-type ${skill.type.toLowerCase()}`}>
+                  {skill.type}
                 </span>
               </div>
               <p className="skill-description">{skill.description}</p>
               <div className="skill-footer">
-                <div className="user-info">
-                  <div className="user-avatar">
-                    {skill.user_name.charAt(0).toUpperCase()}
-                  </div>
-                  <div className="user-details">
-                    <div className="user-name">{skill.user_name}</div>
-                    <div className="user-contact">{skill.contact_info}</div>
-                  </div>
-                </div>
-                <button className="connect-button">Connect</button>
+                <span className="user-name">By {skill.teacher}</span>
+                <button 
+                  className="view-details-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/skills/${skill.id}`);
+                  }}
+                >
+                  View Details
+                </button>
               </div>
             </div>
           ))}
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default SkillList 
+export default SkillList;
