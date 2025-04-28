@@ -7,11 +7,11 @@ function Navbar() {
   const [unreadNotifications, setUnreadNotifications] = useState(2)
 
   const navItems = [
-    { name: 'Dashboard', path: '/dashboard' },
-    { name: 'Browse Skills', path: '/skills' },
-    { name: 'Messages', path: '/messages' },
-    { name: 'Notifications', path: '/notifications', showBadge: true },
-    { name: 'Profile', path: '/profile' },
+    { name: 'Dashboard           ', path: '/dashboard' },
+    { name: 'Browse Skills       ', path: '/skills' },
+    { name: 'Messages            ', path: '/messages' },
+    { name: 'Notifications       ', path: '/notifications', showBadge: true },
+    { name: 'Profile             ', path: '/profile' },
   ]
 
   const isActive = (path) => location.pathname === path

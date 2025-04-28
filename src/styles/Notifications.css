@@ -1,27 +1,51 @@
+/* Global Variables */
+:root {
+  --primary-color: #007BFF;
+  --secondary-color: #0056b3;
+  --text-color: #333;
+  --text-secondary: #666;
+  --background-secondary: #f9f9f9;
+  --button-bg: #007BFF;
+  --button-hover-bg: #0056b3;
+  --button-text-color: white;
+  --accept-btn-bg: lightgreen;
+  --reject-btn-bg: pink;
+  --accept-btn-text: darkgreen;
+  --reject-btn-text: darkred;
+  --border-color: #ddd;
+  --notification-bg: #f0f0f0;
+  --notification-border-radius: 8px;
+}
+
 /* Notifications Container */
 .notifications-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
+  background-color: var(--background-secondary);
+  border-radius: var(--notification-border-radius);
 }
 
 .notifications-container h1 {
   margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
   color: var(--text-color);
 }
 
+/* Notifications Loading & Empty States */
 .notifications-loading,
 .notifications-empty {
   text-align: center;
   padding: 2rem;
   color: var(--text-secondary);
-  background: var(--background-secondary);
-  border-radius: 8px;
+  background-color: var(--background-secondary);
+  border-radius: var(--notification-border-radius);
 }
 
 /* Notifications Header */
 .notifications-header {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto 2rem;
   display: flex;
   justify-content: space-between;
@@ -31,40 +55,49 @@
 .notifications-header h1 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #007BFF;
+  color: var(--primary-color);
 }
 
 .mark-all-read {
-  padding: 0.5rem 1rem;
-  background: #007BFF;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
   border: none;
   border-radius: 0.5rem;
-  color: white;
+  color: var(--button-text-color);
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .mark-all-read:hover {
-  background: #0056b3;
+  background: var(--secondary-color);
 }
 
 /* Notifications List */
 .notifications-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 /* Notification Item */
 .notification-item {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--notification-border-radius);
+  background-color: white;
+  transition: background-color 0.3s ease;
 }
 
 .notification-item:last-child {
   border-bottom: none;
 }
 
+.notification-item:hover {
+  background-color: var(--notification-bg);
+}
+
+/* Notification Header */
 .notification-header {
   display: flex;
   justify-content: space-between;
@@ -77,47 +110,58 @@
 }
 
 .notification-time {
-  color: #666;
-  font-size: 14px;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
 }
 
 .notification-message {
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 10px;
 }
 
 .notification-actions {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
+}
+
+.accept-button,
+.reject-button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .accept-button {
-  background-color: lightgreen;
-  color: darkgreen;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
+  background-color: var(--accept-btn-bg);
+  color: var(--accept-btn-text);
+}
+
+.accept-button:hover {
+  background-color: darkgreen;
 }
 
 .reject-button {
-  background-color: pink;
-  color: darkred;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
+  background-color: var(--reject-btn-bg);
+  color: var(--reject-btn-text);
+}
+
+.reject-button:hover {
+  background-color: darkred;
 }
 
 .unread {
-  background-color: #f0f0f0;
+  background-color: var(--notification-bg);
+  font-weight: bold;
 }
 
 /* No Notifications */
 .no-notifications {
   text-align: center;
-  padding: 20px;
-  color: #666;
+  padding: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
 }
 
 /* Mobile Responsiveness */
@@ -126,15 +170,33 @@
     padding: 1rem;
   }
 
+  .notifications-header h1 {
+    font-size: 2rem;
+  }
+
   .notification-item {
-    padding: 0.75rem;
+    padding: 1rem;
   }
 
   .notification-title {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .notification-message {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .mark-all-read {
+    padding: 0.5rem 1rem;
+  }
+
+  .notification-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .accept-button,
+  .reject-button {
+    width: 100%;
   }
 }
