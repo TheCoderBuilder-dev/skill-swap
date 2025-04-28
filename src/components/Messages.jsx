@@ -5,6 +5,7 @@ function Messages() {
   const [msgs, setMsgs] = useState([]); 
   const [picked, setPicked] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [txt, setTxt] = useState('');
 
   useEffect(() => {
     const fakeStuff = [

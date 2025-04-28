@@ -1,30 +1,30 @@
-/* === Fix Root to Take Full Width & Height === */
+/* Base Reset */
 html, body, #root {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
-/* Remove max-width constraint */
+/* Root Styling */
 #root {
-  max-width: none;
-  padding: 0;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
-/* Optional: Make .app take full space inside root */
+/* Main App Container */
 .app {
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: 100%;
   min-height: 100vh;
   background-color: #f0f0f0;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Leave your logo styles here if you still need the spinning hover thing */
+/* Logo Animations */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -38,6 +38,7 @@ html, body, #root {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* Spin Animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -53,10 +54,12 @@ html, body, #root {
   }
 }
 
+/* Card Styling */
 .card {
   padding: 2em;
 }
 
+/* Docs link style */
 .read-the-docs {
   color: #888;
 }

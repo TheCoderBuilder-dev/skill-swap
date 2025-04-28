@@ -6,55 +6,44 @@ import '../styles/SkillList.css';
 function SkillList() {
   const [all_skills, setAllSkills] = useState([]);
   const [search, setSearch] = useState('');
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   let navigate = useNavigate();
 
-  var skills = [
-    {
-      id: '1',
-      title: 'JavaScript Programming',
-      description: 'Learn JavaScript programming from basics to advanced concepts.',
-      type: 'OFFERING',
-      teacher: 'John Smith'
-    },
-    {
-      id: '2',
-      title: 'Guitar Lessons',
-      description: 'Beginner to intermediate acoustic guitar lessons.',
-      type: 'OFFERING',
-      teacher: 'Sarah Johnson'
-    },
-    {
-      id: '3',
-      title: 'Spanish Language',
-      description: 'Want to learn Spanish language. Looking for a tutor.',
-      type: 'SEEKING',
-      teacher: 'Mike Wilson'
-    },
-  ];
-
   useEffect(() => {
-    setAllSkills(skills);
-    setisLoading(false);
-  }, [])
+    fetch('http://localhost:3000/skills') // Make sure your db.json has a "skills" array
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch skills');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setAllSkills(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        toast.error('Failed to load skills. Try again later.');
+        setIsLoading(false);
+      });
+  }, []);
 
   function searchSkills(searchText) {
     setSearch(searchText);
   }
 
-  if(isLoading == true) {
-    return <div className="skills-container">
-      <div className="loading">Loading skills...</div>
-    </div>
+  if (isLoading) {
+    return (
+      <div className="skills-container">
+        <div className="loading">Loading skills...</div>
+      </div>
+    );
   }
 
-  let filtered = [];
-  for(let i = 0; i < all_skills.length; i++) {
-    if(all_skills[i].title.toLowerCase().includes(search.toLowerCase()) || 
-       all_skills[i].description.toLowerCase().includes(search.toLowerCase())) {
-      filtered.push(all_skills[i]);
-    }
-  }
+  const filtered = all_skills.filter(skill =>
+    (skill?.title?.toLowerCase() || '').includes(search.toLowerCase()) ||
+    (skill?.description?.toLowerCase() || '').includes(search.toLowerCase())
+  );
 
   return (
     <div className="skills-container">
@@ -72,31 +61,29 @@ function SkillList() {
       </div>
 
       {filtered.length === 0 ? (
-        <div className="no-results">
-          No skills found matching your search.
-        </div>
+        <div className="no-results">No skills found matching your search.</div>
       ) : (
         <div className="skills-list">
           {filtered.map(skill => (
-            <div 
-              key={skill.id} 
+            <div
+              key={skill?.id || Math.random()}
               className="skill-card"
-              onClick={() => navigate(`/skills/${skill.id}`)}
+              onClick={() => navigate(`/skills/${skill?.id}`)}
             >
               <div className="skill-header">
-                <h3 className="skill-title">{skill.title}</h3>
-                <span className={`skill-type ${skill.type.toLowerCase()}`}>
-                  {skill.type}
+                <h3 className="skill-title">{skill?.title || 'Untitled Skill'}</h3>
+                <span className={`skill-type ${skill?.type?.toLowerCase() || ''}`}>
+                  {skill?.type || 'Unspecified'}
                 </span>
               </div>
-              <p className="skill-description">{skill.description}</p>
+              <p className="skill-description">{skill?.description || 'No description available'}</p>
               <div className="skill-footer">
-                <span className="user-name">By {skill.teacher}</span>
-                <button 
+                <span className="user-name">By {skill?.teacher || 'Anonymous'}</span>
+                <button
                   className="view-details-button"
                   onClick={(e) => {
                     e.stopPropagation();
-                    navigate(`/skills/${skill.id}`);
+                    navigate(`/skills/${skill?.id}`);
                   }}
                 >
                   View Details
@@ -111,3 +98,4 @@ function SkillList() {
 }
 
 export default SkillList;
+

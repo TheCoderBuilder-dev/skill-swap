@@ -9,535 +9,370 @@
       "level": "Beginner",
       "location": "Online",
       "teacherId": "user1",
-      "about": "Comprehensive JavaScript course covering fundamentals to advanced topics"
+      "about": "Comprehensive JavaScript course covering fundamentals to advanced topics."
     },
     {
       "id": "2",
-      "title": "Guitar Lessons",
-      "description": "Beginner to intermediate acoustic guitar lessons.",
+      "title": "Yoga Instruction",
+      "description": "Certified yoga instructor offering personalized sessions for beginners to intermediate.",
       "type": "OFFERING",
-      "time": "1 hour per week",
-      "level": "Beginner",
-      "location": "In Person",
+      "time": "2 hours per week",
+      "level": "Beginner to Intermediate",
+      "location": "Hybrid",
       "teacherId": "user2",
-      "about": "Learn guitar through practical exercises and songs"
+      "about": "Personalized yoga sessions focusing on fitness and mindfulness."
     },
     {
       "id": "3",
-      "title": "Spanish Language",
-      "description": "Want to learn Spanish language. Looking for a tutor.",
-      "type": "SEEKING",
-      "time": "Flexible",
-      "level": "Beginner",
+      "title": "Web Development Mentoring",
+      "description": "Mentoring sessions for aspiring web developers. Learn front-end and back-end skills.",
+      "type": "OFFERING",
+      "time": "3 hours per week",
+      "level": "Beginner to Intermediate",
       "location": "Online",
       "teacherId": "user3",
-      "about": "Seeking conversational Spanish lessons"
+      "about": "Hands-on learning with real-world projects in web development."
     },
     {
       "id": "4",
-      "title": "Digital Photography Basics",
-      "description": "Professional photographer offering lessons in composition, lighting, and basic photo editing",
+      "title": "Music Production Lessons",
+      "description": "Learn to produce music using industry-standard software. Suitable for beginners.",
       "type": "OFFERING",
-      "time": "2 hours per week",
+      "time": "4 hours per week",
       "level": "Beginner",
       "location": "Hybrid",
       "teacherId": "user4",
-      "about": "Learn photography from a professional photographer"
+      "about": "Focus on creating beats, mixing, and mastering tracks."
     },
     {
       "id": "5",
-      "title": "French Language Exchange",
-      "description": "Native French speaker looking to exchange language practice with English speakers",
+      "title": "Fitness Coaching",
+      "description": "Personalized fitness plans and coaching to help you achieve your health goals.",
       "type": "OFFERING",
-      "time": "1 hour per week",
-      "level": "Intermediate",
-      "location": "Online",
+      "time": "1.5 hours per week",
+      "level": "Beginner to Advanced",
+      "location": "In-person / Online",
       "teacherId": "user5",
-      "about": "Native French speaker with teaching experience"
+      "about": "Customized workout routines and nutritional advice."
     },
     {
       "id": "6",
-      "title": "Yoga Instruction",
-      "description": "Certified yoga instructor offering personalized sessions for beginners to intermediate",
-      "skill_type": "fitness",
-      "user_name": "Emma P",
-      "contact_info": "emma.p@email.com",
-      "posted_on": "2024-03-17"
+      "title": "Graphic Design Course",
+      "description": "Learn graphic design techniques and tools. From beginner to advanced skills.",
+      "type": "OFFERING",
+      "time": "3 hours per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user6",
+      "about": "Introduction to design software and creative techniques."
     },
     {
       "id": "7",
-      "title": "Web Development Mentoring",
-      "description": "Full-stack developer offering mentoring in React, Node.js, and modern web development",
-      "skill_type": "technology",
-      "user_name": "David H",
-      "contact_info": "david.h@email.com",
-      "posted_on": "2024-03-17"
+      "title": "Photography Workshop",
+      "description": "Learn the art of photography, from basics to professional techniques.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner",
+      "location": "In-person",
+      "teacherId": "user7",
+      "about": "Focus on composition, lighting, and editing for stunning photos."
     },
     {
       "id": "8",
-      "title": "Cooking Italian Cuisine",
-      "description": "Professional chef sharing authentic Italian cooking techniques and recipes",
-      "skill_type": "culinary",
-      "user_name": "Marco B",
-      "contact_info": "marco.b@email.com",
-      "posted_on": "2024-03-18"
+      "title": "Cooking Classes",
+      "description": "Learn how to cook a variety of cuisines from around the world.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner to Intermediate",
+      "location": "Hybrid",
+      "teacherId": "user8",
+      "about": "Hands-on lessons on cooking skills, recipes, and presentation."
     },
     {
       "id": "9",
-      "title": "Drawing Fundamentals",
-      "description": "Artist teaching basic to advanced drawing techniques, focusing on perspective and shading",
-      "skill_type": "arts",
-      "user_name": "Lisa W",
-      "contact_info": "lisa.w@email.com",
-      "posted_on": "2024-03-18"
+      "title": "Language Exchange Program",
+      "description": "Improve your language skills through conversation with native speakers.",
+      "type": "OFFERING",
+      "time": "1 hour per week",
+      "level": "Beginner to Advanced",
+      "location": "Online",
+      "teacherId": "user9",
+      "about": "Cultural exchange and language practice for fluent communication."
     },
     {
       "id": "10",
-      "title": "Financial Planning Basics",
-      "description": "Certified financial planner offering guidance on budgeting and investment basics",
-      "skill_type": "finance",
-      "user_name": "Robert J",
-      "contact_info": "robert.j@email.com",
-      "posted_on": "2024-03-19"
+      "title": "Digital Marketing Mentorship",
+      "description": "One-on-one mentorship to help you learn digital marketing strategies.",
+      "type": "OFFERING",
+      "time": "3 hours per week",
+      "level": "Intermediate to Advanced",
+      "location": "Online",
+      "teacherId": "user10",
+      "about": "Guided learning of SEO, social media, and content marketing."
     },
     {
       "id": "11",
-      "title": "Japanese Language and Culture",
-      "description": "Teaching Japanese language basics along with cultural insights and customs",
-      "skill_type": "language",
-      "user_name": "Yuki T",
-      "contact_info": "yuki.t@email.com",
-      "posted_on": "2024-03-19"
+      "title": "Public Speaking Coaching",
+      "description": "Learn how to speak confidently in front of an audience.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner",
+      "location": "In-person",
+      "teacherId": "user11",
+      "about": "Focus on speech delivery, body language, and voice modulation."
     },
     {
       "id": "12",
-      "title": "Home Garden Design",
-      "description": "Experienced gardener offering advice on garden design and plant care",
-      "skill_type": "gardening",
-      "user_name": "Helen G",
-      "contact_info": "helen.g@email.com",
-      "posted_on": "2024-03-20"
+      "title": "Art Classes",
+      "description": "Learn different painting techniques and explore your creativity.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner",
+      "location": "In-person",
+      "teacherId": "user12",
+      "about": "Covering various media, from watercolors to acrylics."
     },
     {
       "id": "13",
-      "title": "Mobile App Development",
-      "description": "iOS developer teaching Swift and mobile app development fundamentals",
-      "skill_type": "technology",
-      "user_name": "Chris M",
-      "contact_info": "chris.m@email.com",
-      "posted_on": "2024-03-20"
+      "title": "Dance Classes",
+      "description": "Learn how to dance in different styles, from hip-hop to salsa.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner",
+      "location": "In-person",
+      "teacherId": "user13",
+      "about": "Fun and energetic dance sessions to improve rhythm and coordination."
     },
     {
       "id": "14",
-      "title": "Piano Lessons",
-      "description": "Classical pianist offering lessons for beginners to intermediate players",
-      "skill_type": "music",
-      "user_name": "Anna K",
-      "contact_info": "anna.k@email.com",
-      "posted_on": "2024-03-21"
+      "title": "Coding Bootcamp",
+      "description": "Intensive coding lessons in full-stack web development.",
+      "type": "OFFERING",
+      "time": "5 hours per week",
+      "level": "Beginner to Intermediate",
+      "location": "Online",
+      "teacherId": "user14",
+      "about": "Build projects from scratch and learn programming languages like JavaScript."
     },
     {
       "id": "15",
-      "title": "Personal Fitness Training",
-      "description": "Certified personal trainer specializing in strength training and weight loss",
-      "skill_type": "fitness",
-      "user_name": "Tom B",
-      "contact_info": "tom.b@email.com",
-      "posted_on": "2024-03-21"
+      "title": "Self-Defense Classes",
+      "description": "Learn the basics of self-defense techniques to protect yourself.",
+      "type": "OFFERING",
+      "time": "1 hour per week",
+      "level": "Beginner",
+      "location": "In-person",
+      "teacherId": "user15",
+      "about": "Focus on basic moves and building confidence in self-defense situations."
     },
     {
       "id": "16",
-      "title": "Creative Writing Workshop",
-      "description": "Published author offering guidance in fiction writing and storytelling",
-      "skill_type": "writing",
-      "user_name": "Rachel S",
-      "contact_info": "rachel.s@email.com",
-      "posted_on": "2024-03-22"
+      "title": "Video Editing Course",
+      "description": "Learn to edit videos like a pro using software like Adobe Premiere.",
+      "type": "OFFERING",
+      "time": "3 hours per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user16",
+      "about": "Master the art of video editing with a focus on storytelling and effects."
     },
     {
       "id": "17",
-      "title": "Data Science Fundamentals",
-      "description": "Data scientist teaching Python, pandas, and basic machine learning concepts",
-      "skill_type": "technology",
-      "user_name": "Michael L",
-      "contact_info": "michael.l@email.com",
-      "posted_on": "2024-03-22"
+      "title": "3D Modeling Classes",
+      "description": "Learn 3D modeling using tools like Blender or AutoCAD.",
+      "type": "OFFERING",
+      "time": "4 hours per week",
+      "level": "Intermediate",
+      "location": "Online",
+      "teacherId": "user17",
+      "about": "Create realistic 3D models for games, animation, and architecture."
     },
     {
       "id": "18",
-      "title": "Meditation and Mindfulness",
-      "description": "Experienced meditation teacher offering guidance in mindfulness practices",
-      "skill_type": "wellness",
-      "user_name": "Sara M",
-      "contact_info": "sara.m@email.com",
-      "posted_on": "2024-03-23"
+      "title": "Social Media Strategy Coaching",
+      "description": "Learn how to grow your brand on social media and engage your audience.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Intermediate",
+      "location": "Online",
+      "teacherId": "user18",
+      "about": "Strategic coaching on content creation, advertising, and engagement."
     },
     {
       "id": "19",
-      "title": "Spanish Conversation Practice",
-      "description": "Native Spanish speaker offering conversation practice and cultural exchange",
-      "skill_type": "language",
-      "user_name": "Carlos R",
-      "contact_info": "carlos.r@email.com",
-      "posted_on": "2024-03-23"
+      "title": "Fashion Design Course",
+      "description": "Learn to create your own clothing designs and patterns.",
+      "type": "OFFERING",
+      "time": "3 hours per week",
+      "level": "Beginner",
+      "location": "In-person",
+      "teacherId": "user19",
+      "about": "Focus on sketching, pattern making, and garment construction."
     },
     {
       "id": "20",
-      "title": "Digital Marketing Strategy",
-      "description": "Marketing professional teaching social media and content marketing",
-      "skill_type": "business",
-      "user_name": "Jessica P",
-      "contact_info": "jessica.p@email.com",
-      "posted_on": "2024-03-24"
+      "title": "Digital Illustration Classes",
+      "description": "Learn how to create digital art using software like Photoshop and Procreate.",
+      "type": "OFFERING",
+      "time": "3 hours per week",
+      "level": "Beginner to Intermediate",
+      "location": "Online",
+      "teacherId": "user20",
+      "about": "Master the techniques of creating beautiful digital illustrations."
     },
     {
       "id": "21",
-      "title": "Woodworking Basics",
-      "description": "Experienced woodworker teaching basic furniture making and wood crafting",
-      "skill_type": "crafts",
-      "user_name": "John D",
-      "contact_info": "john.d@email.com",
-      "posted_on": "2024-03-24"
+      "title": "Web Design Bootcamp",
+      "description": "Learn web design principles and create beautiful websites.",
+      "type": "OFFERING",
+      "time": "3 hours per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user21",
+      "about": "Introduction to HTML, CSS, and responsive design."
     },
     {
       "id": "22",
-      "title": "UI/UX Design Principles",
-      "description": "Product designer teaching user interface and experience design fundamentals",
-      "skill_type": "design",
-      "user_name": "Nina R",
-      "contact_info": "nina.r@email.com",
-      "posted_on": "2024-03-25"
+      "title": "Advanced SEO Strategy",
+      "description": "Learn advanced SEO techniques to rank higher on search engines.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Advanced",
+      "location": "Online",
+      "teacherId": "user22",
+      "about": "Focus on technical SEO, keyword research, and backlinking strategies."
     },
     {
       "id": "23",
-      "title": "Vegan Cooking Classes",
-      "description": "Plant-based chef teaching healthy and delicious vegan cooking techniques",
-      "skill_type": "culinary",
-      "user_name": "Maya H",
-      "contact_info": "maya.h@email.com",
-      "posted_on": "2024-03-25"
+      "title": "Creative Writing Course",
+      "description": "Explore the art of creative writing and storytelling.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user23",
+      "about": "Writing exercises, character development, and plot structure techniques."
     },
     {
       "id": "24",
-      "title": "Home DIY Projects",
-      "description": "Experienced handyman teaching basic home repair and improvement skills",
-      "skill_type": "home",
-      "user_name": "Steve K",
-      "contact_info": "steve.k@email.com",
-      "posted_on": "2024-03-26"
+      "title": "Career Coaching",
+      "description": "Get guidance on building your career, from interviews to career paths.",
+      "type": "OFFERING",
+      "time": "1 hour per week",
+      "level": "Beginner to Intermediate",
+      "location": "Online",
+      "teacherId": "user24",
+      "about": "Personalized coaching for career growth, resume building, and interviews."
     },
     {
       "id": "25",
-      "title": "Voice Training",
-      "description": "Professional vocalist offering singing lessons and voice training",
-      "skill_type": "music",
-      "user_name": "Maria C",
-      "contact_info": "maria.c@email.com",
-      "posted_on": "2024-03-26"
+      "title": "Foreign Language Classes",
+      "description": "Learn Spanish, French, or German with a native-speaking teacher.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner to Intermediate",
+      "location": "Online",
+      "teacherId": "user25",
+      "about": "Focus on conversation practice, vocabulary, and grammar."
     },
     {
       "id": "26",
-      "title": "3D Modeling and Animation",
-      "description": "3D artist teaching Blender and basic animation principles",
-      "skill_type": "technology",
-      "user_name": "Peter Z",
-      "contact_info": "peter.z@email.com",
-      "posted_on": "2024-03-27"
+      "title": "Business Coaching",
+      "description": "Learn how to start and grow your own business.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner to Intermediate",
+      "location": "Online",
+      "teacherId": "user26",
+      "about": "Business planning, marketing strategies, and entrepreneurship skills."
     },
     {
       "id": "27",
-      "title": "Chess Strategy",
-      "description": "Chess master teaching advanced strategies and game analysis",
-      "skill_type": "games",
-      "user_name": "Daniel F",
-      "contact_info": "daniel.f@email.com",
-      "posted_on": "2024-03-27"
+      "title": "Meditation and Mindfulness",
+      "description": "Guided sessions to reduce stress and improve focus.",
+      "type": "OFFERING",
+      "time": "1 hour per week",
+      "level": "Beginner",
+      "location": "Hybrid",
+      "teacherId": "user27",
+      "about": "Breathing techniques and mindfulness practices for mental clarity."
     },
     {
       "id": "28",
-      "title": "Public Speaking",
-      "description": "Communication coach offering public speaking and presentation skills training",
-      "skill_type": "professional",
-      "user_name": "Laura B",
-      "contact_info": "laura.b@email.com",
-      "posted_on": "2024-03-28"
+      "title": "Personal Finance Coaching",
+      "description": "Learn to manage your money, invest, and build wealth.",
+      "type": "OFFERING",
+      "time": "1 hour per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user28",
+      "about": "Budgeting, investing, and wealth-building strategies."
     },
     {
       "id": "29",
-      "title": "Watercolor Painting",
-      "description": "Artist teaching watercolor techniques and color theory",
-      "skill_type": "arts",
-      "user_name": "Emily W",
-      "contact_info": "emily.w@email.com",
-      "posted_on": "2024-03-28"
+      "title": "Mobile App Development Bootcamp",
+      "description": "Learn how to build mobile apps for Android and iOS.",
+      "type": "OFFERING",
+      "time": "5 hours per week",
+      "level": "Intermediate",
+      "location": "Online",
+      "teacherId": "user29",
+      "about": "Create apps using modern tools like React Native and Flutter."
     },
     {
       "id": "30",
-      "title": "German Language Basics",
-      "description": "Native German speaker offering language lessons for beginners",
-      "skill_type": "language",
-      "user_name": "Klaus M",
-      "contact_info": "klaus.m@email.com",
-      "posted_on": "2024-03-29"
+      "title": "Life Coaching",
+      "description": "Get personalized coaching to set and achieve your life goals.",
+      "type": "OFFERING",
+      "time": "1 hour per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user30",
+      "about": "Focus on self-growth, motivation, and achieving life goals."
     },
     {
       "id": "31",
-      "title": "Blockchain Development",
-      "description": "Blockchain developer teaching smart contract development and Web3",
-      "skill_type": "technology",
-      "user_name": "Alex K",
-      "contact_info": "alex.k@email.com",
-      "posted_on": "2024-03-29"
+      "title": "Business Writing Course",
+      "description": "Learn how to write professional emails, reports, and proposals.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user31",
+      "about": "Clear and concise business writing techniques for effective communication."
     },
     {
       "id": "32",
-      "title": "Interior Design Basics",
-      "description": "Interior designer teaching space planning and design principles",
-      "skill_type": "design",
-      "user_name": "Sophie H",
-      "contact_info": "sophie.h@email.com",
-      "posted_on": "2024-03-30"
+      "title": "Event Planning Course",
+      "description": "Learn the art of planning successful events.",
+      "type": "OFFERING",
+      "time": "2 hours per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user32",
+      "about": "Learn logistics, coordination, and planning of events from start to finish."
     },
     {
       "id": "33",
-      "title": "Dance - Hip Hop",
-      "description": "Professional dancer teaching hip hop choreography and techniques",
-      "skill_type": "dance",
-      "user_name": "Marcus J",
-      "contact_info": "marcus.j@email.com",
-      "posted_on": "2024-03-30"
+      "title": "Film Production Course",
+      "description": "Learn the basics of film production, from scripting to shooting and editing.",
+      "type": "OFFERING",
+      "time": "4 hours per week",
+      "level": "Beginner",
+      "location": "Hybrid",
+      "teacherId": "user33",
+      "about": "Introduction to filmmaking with a focus on storytelling and technical skills."
     },
     {
       "id": "34",
-      "title": "Resume Writing",
-      "description": "Career coach offering resume writing and job search strategy advice",
-      "skill_type": "professional",
-      "user_name": "Linda P",
-      "contact_info": "linda.p@email.com",
-      "posted_on": "2024-03-31"
-    },
-    {
-      "id": "35",
-      "title": "Pottery Making",
-      "description": "Ceramic artist teaching wheel throwing and hand building techniques",
-      "skill_type": "crafts",
-      "user_name": "Mark T",
-      "contact_info": "mark.t@email.com",
-      "posted_on": "2024-03-31"
-    },
-    {
-      "id": "36",
-      "title": "Video Editing",
-      "description": "Professional editor teaching video editing with Adobe Premiere Pro",
-      "skill_type": "technology",
-      "user_name": "Ryan M",
-      "contact_info": "ryan.m@email.com",
-      "posted_on": "2024-04-01"
-    },
-    {
-      "id": "37",
-      "title": "Aromatherapy Basics",
-      "description": "Certified aromatherapist teaching essential oil blending and uses",
-      "skill_type": "wellness",
-      "user_name": "Alice N",
-      "contact_info": "alice.n@email.com",
-      "posted_on": "2024-04-01"
-    },
-    {
-      "id": "38",
-      "title": "Graphic Design",
-      "description": "Designer teaching Adobe Creative Suite and design principles",
-      "skill_type": "design",
-      "user_name": "James L",
-      "contact_info": "james.l@email.com",
-      "posted_on": "2024-04-02"
-    },
-    {
-      "id": "39",
-      "title": "Martial Arts - Karate",
-      "description": "Black belt instructor teaching karate basics and self-defense",
-      "skill_type": "fitness",
-      "user_name": "Ken W",
-      "contact_info": "ken.w@email.com",
-      "posted_on": "2024-04-02"
-    },
-    {
-      "id": "40",
-      "title": "Organic Farming",
-      "description": "Experienced farmer teaching organic growing methods and sustainability",
-      "skill_type": "gardening",
-      "user_name": "Beth Y",
-      "contact_info": "beth.y@email.com",
-      "posted_on": "2024-04-03"
-    },
-    {
-      "id": "41",
-      "title": "Cryptocurrency Trading",
-      "description": "Crypto trader teaching basic trading strategies and market analysis",
-      "skill_type": "finance",
-      "user_name": "Sam B",
-      "contact_info": "sam.b@email.com",
-      "posted_on": "2024-04-03"
-    },
-    {
-      "id": "42",
-      "title": "Podcast Production",
-      "description": "Audio producer teaching podcast recording and editing techniques",
-      "skill_type": "technology",
-      "user_name": "Kate D",
-      "contact_info": "kate.d@email.com",
-      "posted_on": "2024-04-04"
-    },
-    {
-      "id": "43",
-      "title": "Wine Tasting",
-      "description": "Sommelier offering wine appreciation and tasting techniques",
-      "skill_type": "culinary",
-      "user_name": "Paul V",
-      "contact_info": "paul.v@email.com",
-      "posted_on": "2024-04-04"
-    },
-    {
-      "id": "44",
-      "title": "Makeup Artistry",
-      "description": "Professional makeup artist teaching beauty and special effects techniques",
-      "skill_type": "beauty",
-      "user_name": "Mia R",
-      "contact_info": "mia.r@email.com",
-      "posted_on": "2024-04-05"
-    },
-    {
-      "id": "45",
-      "title": "Drum Lessons",
-      "description": "Professional drummer teaching various styles and techniques",
-      "skill_type": "music",
-      "user_name": "Rick S",
-      "contact_info": "rick.s@email.com",
-      "posted_on": "2024-04-05"
-    },
-    {
-      "id": "46",
-      "title": "Pet Training",
-      "description": "Certified dog trainer teaching basic obedience and behavior modification",
-      "skill_type": "pets",
-      "user_name": "Amy H",
-      "contact_info": "amy.h@email.com",
-      "posted_on": "2024-04-06"
-    },
-    {
-      "id": "47",
-      "title": "Knitting and Crochet",
-      "description": "Experienced crafter teaching various knitting and crochet techniques",
-      "skill_type": "crafts",
-      "user_name": "Grace L",
-      "contact_info": "grace.l@email.com",
-      "posted_on": "2024-04-06"
-    },
-    {
-      "id": "48",
-      "title": "Game Development",
-      "description": "Game developer teaching Unity and basic game design principles",
-      "skill_type": "technology",
-      "user_name": "Tim K",
-      "contact_info": "tim.k@email.com",
-      "posted_on": "2024-04-07"
-    },
-    {
-      "id": "49",
-      "title": "Salsa Dancing",
-      "description": "Dance instructor teaching salsa moves and Latin dance basics",
-      "skill_type": "dance",
-      "user_name": "Rosa M",
-      "contact_info": "rosa.m@email.com",
-      "posted_on": "2024-04-07"
-    },
-    {
-      "id": "50",
-      "title": "Business Plan Writing",
-      "description": "Business consultant teaching how to create effective business plans",
-      "skill_type": "business",
-      "user_name": "Frank C",
-      "contact_info": "frank.c@email.com",
-      "posted_on": "2024-04-08"
-    },
-    {
-      "id": "8b80",
-      "title": "guitar",
-      "description": "looop",
-      "skillType": "cooking",
-      "skillLevel": "intermediate"
-    },
-    {
-      "id": "b2f9",
-      "title": "mlml",
-      "description": "mnoo",
-      "skillType": "music",
-      "skillLevel": "beginner"
-    },
-    {
-      "id": "2283",
-      "title": "lll",
-      "description": "kmnkn",
-      "skillType": "music",
-      "skillLevel": "beginner"
-    }
-  ],
-  "users": [
-    {
-      "id": "user1",
-      "name": "John Smith",
-      "email": "john@example.com",
-      "about": "Experienced JavaScript developer and teacher",
-      "skills": [
-        "1"
-      ]
-    },
-    {
-      "id": "user2",
-      "name": "Sarah Johnson",
-      "email": "sarah@example.com",
-      "about": "Professional guitarist with 10 years of teaching experience",
-      "skills": [
-        "2"
-      ]
-    },
-    {
-      "id": "user3",
-      "name": "Mike Wilson",
-      "email": "mike@example.com",
-      "about": "Language enthusiast looking to learn Spanish",
-      "skills": [
-        "3"
-      ]
-    },
-    {
-      "id": "user4",
-      "name": "Alex M",
-      "email": "alex.m@email.com",
-      "about": "Professional photographer with 5 years of teaching experience",
-      "skills": [
-        "4"
-      ]
-    },
-    {
-      "id": "user5",
-      "name": "Sophie L",
-      "email": "sophie.l@email.com",
-      "about": "Native French speaker teaching language and culture",
-      "skills": [
-        "5"
-      ]
-    }
-  ],
-  "swaps": [
-    {
-      "id": "swap1",
-      "offeredSkillId": "1",
-      "requestedSkillId": "2",
-      "offererId": "user1",
-      "requesterId": "user2",
-      "status": "pending",
-      "createdAt": "2024-03-20T10:00:00Z"
+      "title": "Mindfulness for Students",
+      "description": "Learn mindfulness practices to reduce stress and improve concentration in studies.",
+      "type": "OFFERING",
+      "time": "1 hour per week",
+      "level": "Beginner",
+      "location": "Online",
+      "teacherId": "user34",
+      "about": "Techniques for staying focused and calm during stressful study periods."
     }
   ]
 }
