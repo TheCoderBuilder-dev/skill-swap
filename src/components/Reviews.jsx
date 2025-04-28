@@ -54,7 +54,6 @@ function Reviews() {
       </div>
     );
   }
-
   if (error || !review) {
     return (
       <div className="reviews-container">
