@@ -160,3 +160,56 @@ div:has(> h2) + div:has(> div:only-child) {
   font-size: 1.2rem;
   color: #999;
 }
+
+/* Add New Skill Section Styling */
+.add-skill {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px lightgray;
+  margin-bottom: 30px;
+}
+
+.add-skill h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.add-skill input,
+.add-skill textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.add-skill input:focus,
+.add-skill textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.add-skill button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.add-skill button:hover {
+  background-color: #218838;
+}
+
+.add-skill input,
+.add-skill textarea {
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+}

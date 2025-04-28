@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../styles/Profile.css';
 
 function Profile() {
@@ -9,9 +11,9 @@ function Profile() {
     title: '',
     description: ''
   });
+  const [newSkill, setNewSkill] = useState({ title: '', description: '' });
   const myName = 'Mike R';
 
-  // get skills when the page loads
   useEffect(() => {
     fetch('http://localhost:3000/skills')
       .then(response => response.json())
@@ -22,7 +24,7 @@ function Profile() {
       })
       .catch(error => {
         console.error('Error fetching skills:', error);
-        alert('Could not load your skills.');
+        toast.error('Could not load your skills.');
         setLoading(false);
       });
   }, []);
@@ -35,15 +37,18 @@ function Profile() {
     });
   }
 
-  // save changes to a skill
   function saveChanges(id) {
-    // send the updated skill data to the server
+    if (!editStuff.title || !editStuff.description) {
+      toast.error('Both title and description are required!');
+      return;
+    }
+
     fetch(`http://localhost:3000/skills/${id}`, {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(editStuff)
+      body: JSON.stringify(editStuff),
     })
       .then(response => response.json())
       .then(updatedSkill => {
@@ -53,29 +58,59 @@ function Profile() {
           )
         );
         setEditId(null);
-        alert('Skill updated!');
+        toast.success('Skill updated!');
       })
       .catch(error => {
         console.error('Error updating skill:', error);
-        alert('Could not update skill.');
+        toast.error('Could not update skill.');
       });
   }
 
-  // delete a skill
   function deleteSkill(id) {
     if (window.confirm('Are you sure you want to delete this skill?')) {
       fetch(`http://localhost:3000/skills/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
       })
         .then(() => {
           setMySkills(prevSkills => prevSkills.filter(skill => skill.id !== id));
-          alert('Skill deleted!');
+          toast.success('Skill deleted!');
         })
         .catch(error => {
           console.error('Error deleting skill:', error);
-          alert('Could not delete skill.');
+          toast.error('Could not delete skill.');
         });
     }
+  }
+
+  function addNewSkill() {
+    if (!newSkill.title || !newSkill.description) {
+      toast.error('Both title and description are required!');
+      return;
+    }
+
+    const newSkillData = {
+      user_name: myName,
+      title: newSkill.title,
+      description: newSkill.description,
+    };
+
+    fetch('http://localhost:3000/skills', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newSkillData),
+    })
+      .then(response => response.json())
+      .then(skill => {
+        setMySkills(prevSkills => [...prevSkills, skill]);
+        setNewSkill({ title: '', description: '' });
+        toast.success('New skill added!');
+      })
+      .catch(error => {
+        console.error('Error adding skill:', error);
+        toast.error('Could not add skill.');
+      });
   }
 
   if (loading) {
@@ -123,6 +158,24 @@ function Profile() {
           ))
         )}
       </div>
+
+      <div className="add-skill">
+        <h3>Add a New Skill</h3>
+        <input
+          type="text"
+          value={newSkill.title}
+          onChange={e => setNewSkill({ ...newSkill, title: e.target.value })}
+          placeholder="Skill Title"
+        />
+        <textarea
+          value={newSkill.description}
+          onChange={e => setNewSkill({ ...newSkill, description: e.target.value })}
+          placeholder="Skill Description"
+        />
+        <button onClick={addNewSkill}>Add Skill</button>
+      </div>
+
+      <ToastContainer />
     </div>
   );
 }
