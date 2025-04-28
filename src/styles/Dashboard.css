@@ -44,34 +44,64 @@
   font-weight: bold;
 }
 
-.recent-activity {
+/* === Skills Section === */
+.skills-section {
   background-color: white;
   padding: 20px;
+  margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px lightgray;
 }
 
-.activity-title {
-  color: darkblue;
-  margin-bottom: 15px;
+.skills-section h2 {
+  color: #333;
+  margin-bottom: 10px;
 }
 
-.activity-list {
-  list-style: none;
+.skills-section ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.activity-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
+.skills-section li {
+  padding: 8px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-bottom: 8px;
 }
 
-.activity-item:last-child {
-  border-bottom: none;
+.skills-section p {
+  color: #777;
 }
 
-.activity-time {
-  color: #666;
-  font-size: 14px;
+/* === Recent Activity Section === */
+.recent-activity-section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px lightgray;
+}
+
+.recent-activity-section h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.recent-activity-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recent-activity-section li {
+  padding: 8px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.recent-activity-section p {
+  color: #777;
 }
 
 /* === Loading Spinner === */
@@ -96,6 +126,23 @@
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* === Add Skill Button === */
+.add-skill-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-skill-button:hover {
+  background-color: #2563eb;
 }
 
 /* === Responsive Adjustments === */

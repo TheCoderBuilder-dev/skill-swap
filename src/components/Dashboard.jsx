@@ -11,10 +11,14 @@ function Dashboard() {
     skillsSeeking: 0,
     rating: 0,
   });
+
+  const [skillsOffered, setSkillsOffered] = useState([]);
+  const [skillsSeeking, setSkillsSeeking] = useState([]);
   const [recentActivity, setRecentActivity] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Simulate fetching data from API
     const mockStats = {
       activeSwaps: 3,
       completedSwaps: 12,
@@ -22,9 +26,26 @@ function Dashboard() {
       skillsSeeking: 2,
       rating: 4.8,
     };
+
+    const mockSkillsOffered = ['JavaScript', 'React', 'Python'];
+    const mockSkillsSeeking = ['Node.js', 'CSS'];
+    const mockRecentActivity = [
+      'Completed a swap with John: React for Node.js',
+      'Started a new swap with Sarah: Python for CSS',
+    ];
+
+    // Set state with mock data
     setStats(mockStats);
+    setSkillsOffered(mockSkillsOffered);
+    setSkillsSeeking(mockSkillsSeeking);
+    setRecentActivity(mockRecentActivity);
+
     setLoading(false);
   }, []);
+
+  if (loading) {
+    return <div className="loader">Loading...</div>; // Add loader for loading state
+  }
 
   return (
     <div className="dashboard-container">
@@ -66,12 +87,43 @@ function Dashboard() {
       </div>
 
       <div className="dashboard-content">
-        <div className="active-swaps-section">
-          <h2>Active Skill Swaps</h2>
+        <div className="skills-section">
+          <h2>Skills Offered</h2>
+          <ul>
+            {skillsOffered.length > 0 ? (
+              skillsOffered.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))
+            ) : (
+              <p>No skills offered yet.</p>
+            )}
+          </ul>
+        </div>
+
+        <div className="skills-section">
+          <h2>Skills Seeking</h2>
+          <ul>
+            {skillsSeeking.length > 0 ? (
+              skillsSeeking.map((skill, index) => (
+                <li key={index}>{skill}</li>
+              ))
+            ) : (
+              <p>No skills sought yet.</p>
+            )}
+          </ul>
         </div>
 
         <div className="recent-activity-section">
           <h2>Recent Activity</h2>
+          <ul>
+            {recentActivity.length > 0 ? (
+              recentActivity.map((activity, index) => (
+                <li key={index}>{activity}</li>
+              ))
+            ) : (
+              <p>No recent activity.</p>
+            )}
+          </ul>
         </div>
       </div>
     </div>

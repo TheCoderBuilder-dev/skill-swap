@@ -1,22 +1,22 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import '../styles/SkillSwap.css';
+import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import '../styles/SkillSwap.css'
 
 function SkillSwap() {
-  const [swapDetails, setSwapDetails] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const [swapDetails, setSwapDetails] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const { id } = useParams()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchSwapDetails = async () => {
       try {
-        setLoading(true);
-        setError(null);
+        setLoading(true)
+        setError(null)
 
-        await new Promise(resolve => setTimeout(resolve, 500));
+        await new Promise(resolve => setTimeout(resolve, 500))
 
         // Mock data for swap details
         const mockSwapDetails = {
@@ -24,34 +24,34 @@ function SkillSwap() {
           status: 'pending',
           proposedBy: { name: 'John Doe', skill: { title: 'Guitar Lessons', description: 'Beginner to intermediate' } },
           requestedSkill: { title: 'Programming Lessons', description: 'Learn programming fundamentals' }
-        };
+        }
 
-        setSwapDetails(mockSwapDetails);
+        setSwapDetails(mockSwapDetails)
       } catch (err) {
-        console.error('Error fetching swap details:', err);
-        setError('Failed to load swap details');
-        toast.error('Failed to load swap details');
+        console.error('Error fetching swap details:', err)
+        setError('Failed to load swap details')
+        toast.error('Failed to load swap details')
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
 
-    fetchSwapDetails();
-  }, [id]);
+    fetchSwapDetails()
+  }, [id])
 
   // Handle accepting the swap
   const handleAcceptSwap = () => {
-    toast.success('Swap request accepted!');
-    navigate('/dashboard');
+    toast.success('Swap request accepted!')
+    navigate('/dashboard')
   };
 
   const handleDeclineSwap = () => {
-    toast.info('Swap request declined');
-    navigate('/dashboard');
+    toast.info('Swap request declined')
+    navigate('/dashboard')
   };
 
   if (loading) {
-    return <div className="loading">Loading swap details...</div>;
+    return <div className="loading">Loading swap details...</div>
   }
 
   // If there's an error or no swap details, show error message

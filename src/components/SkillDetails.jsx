@@ -1,18 +1,18 @@
-import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import '../styles/SkillDetails.css';
+import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import '../styles/SkillDetails.css'
 
 function SkillDetails() {
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const { id } = useParams()
+  const navigate = useNavigate()
 
-  const [skill, setSkill] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [showSwapModal, setShowSwapModal] = useState(false);
-  const [userSkills, setUserSkills] = useState([]);
-  const [selectedSkillId, setSelectedSkillId] = useState('');
+  const [skill, setSkill] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [showSwapModal, setShowSwapModal] = useState(false)
+  const [userSkills, setUserSkills] = useState([])
+  const [selectedSkillId, setSelectedSkillId] = useState('')
 
   useEffect(() => {
     // fake API call
@@ -27,12 +27,12 @@ function SkillDetails() {
         location: "Online",
         teacher: "John Smith",
         about: "I love helping people learn code."
-      };
+      }
 
-      setSkill(fetchedSkill);
-      setLoading(false);
-    }, 1000);
-  }, [id]);
+      setSkill(fetchedSkill)
+      setLoading(false)
+    }, 1000)
+  }, [id])
 
   useEffect(() => {
     if (showSwapModal) {
@@ -41,24 +41,24 @@ function SkillDetails() {
         { id: '1', title: 'JavaScript Basics', description: 'Learn JS from scratch' },
         { id: '2', title: 'Guitar Lessons', description: 'Learn to play guitar' },
         { id: '3', title: 'Spanish Language', description: 'Learn basic Spanish' }
-      ];
+      ]
 
-      setUserSkills(skills);
+      setUserSkills(skills)
     }
-  }, [showSwapModal]);
+  }, [showSwapModal])
 
   function handleProposeSwap() {
     if (selectedSkillId === '') {
-      toast.error('Please pick a skill first.');
-      return;
+      toast.error('Please pick a skill first.')
+      return
     }
 
     // pretend to send swap proposal
     setTimeout(() => {
-      toast.success('Swap proposal sent!');
-      setShowSwapModal(false);
-      navigate(`/skills/swap/${id}`);
-    }, 500);
+      toast.success('Swap proposal sent!')
+      setShowSwapModal(false)
+      navigate(`/skills/swap/${id}`)
+    }, 500)
   }
 
   if (loading) {
@@ -66,7 +66,7 @@ function SkillDetails() {
       <div className="skill-details-container">
         <p>Loading skill details...</p>
       </div>
-    );
+    )
   }
 
   if (error || !skill) {
@@ -75,7 +75,7 @@ function SkillDetails() {
         <p>{error || 'Skill not found.'}</p>
         <button onClick={() => navigate(-1)}>Go Back</button>
       </div>
-    );
+    )
   }
 
   return (
