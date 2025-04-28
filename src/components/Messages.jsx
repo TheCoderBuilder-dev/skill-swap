@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import '../styles/Messages.css';
+import { useState, useEffect } from 'react'
+import '../styles/Messages.css'
 
 function Messages() {
-  const [msgs, setMsgs] = useState([]); 
-  const [picked, setPicked] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [txt, setTxt] = useState('');
+  const [msgs, setMsgs] = useState([]) 
+  const [picked, setPicked] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [txt, setTxt] = useState('')
 
   useEffect(() => {
     const fakeStuff = [
@@ -23,21 +23,21 @@ function Messages() {
         when: "2024-03-09T15:45:00",
         new: false
       }
-    ];
-    setMsgs(fakeStuff);
-    setLoading(false);
-  }, []);
+    ]
+    setMsgs(fakeStuff)
+    setLoading(false)
+  }, [])
 
   // function to send a message
   function sendMsg(e) {
-    e.preventDefault();
-    if (!txt.trim()) return; // No send an empty message
+    e.preventDefault()
+    if (!txt.trim()) return // No send an empty message
 
-    alert('Sent!');
-    setTxt(''); // clear the text field after sending
+    alert('Sent!')
+    setTxt('') // clear the text field after sending
   }
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>Loading...</div>
 
   return (
     <div className="container">
@@ -87,7 +87,7 @@ function Messages() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default Messages;
+export default Messages
